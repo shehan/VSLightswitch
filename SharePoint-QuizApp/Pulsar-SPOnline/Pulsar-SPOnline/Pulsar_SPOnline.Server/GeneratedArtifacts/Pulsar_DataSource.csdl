@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" Namespace="LightSwitchApplication" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ContentType" Type="Edm.String" MaxLength="Max" />
+    <Property Name="Title" Type="Edm.String" MaxLength="Max" />
+    <Property Name="ContentTypeID" Type="Edm.String" MaxLength="Max" />
+    <Property Name="Modified" Type="Edm.DateTime" />
+    <Property Name="Created" Type="Edm.DateTime" />
+    <Property Name="Owshiddenversion" Type="Edm.Int32" />
+    <Property Name="Version" Type="Edm.String" MaxLength="Max" />
+    <Property Name="Path" Type="Edm.String" MaxLength="Max" />
+    <Property Name="CreatedById" Type="Edm.Int32" />
+    <Property Name="ModifiedById" Type="Edm.Int32" />
+    <NavigationProperty Name="CreatedBy" Relationship="LightSwitchApplication.CategoryItem_CreatedBy" ToRole="CreatedBy" FromRole="CategoryItem" />
+    <NavigationProperty Name="ModifiedBy" Relationship="LightSwitchApplication.CategoryItem_ModifiedBy" ToRole="ModifiedBy" FromRole="CategoryItem" />
+  </EntityType>
+  <EntityType Name="Team">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ContentType" Type="Edm.String" MaxLength="Max" />
+    <Property Name="Title" Type="Edm.String" MaxLength="Max" />
+    <Property Name="ContentTypeID" Type="Edm.String" MaxLength="Max" />
+    <Property Name="Modified" Type="Edm.DateTime" />
+    <Property Name="Created" Type="Edm.DateTime" />
+    <Property Name="Owshiddenversion" Type="Edm.Int32" />
+    <Property Name="Version" Type="Edm.String" MaxLength="Max" />
+    <Property Name="Path" Type="Edm.String" MaxLength="Max" />
+    <Property Name="CreatedById" Type="Edm.Int32" />
+    <Property Name="ModifiedById" Type="Edm.Int32" />
+    <NavigationProperty Name="CreatedBy" Relationship="LightSwitchApplication.TeamItem_CreatedBy" ToRole="CreatedBy" FromRole="TeamItem" />
+    <NavigationProperty Name="ModifiedBy" Relationship="LightSwitchApplication.TeamItem_ModifiedBy" ToRole="ModifiedBy" FromRole="TeamItem" />
+  </EntityType>
+  <EntityType Name="UserInformationList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ContentType" Type="Edm.String" MaxLength="Max" />
+    <Property Name="ContentTypeID" Type="Edm.String" MaxLength="Max" />
+    <Property Name="Name" Type="Edm.String" MaxLength="Max" />
+    <Property Name="Account" Type="Edm.String" MaxLength="Max" />
+    <Property Name="WorkEmail" Type="Edm.String" MaxLength="Max" />
+    <Property Name="MobilePhone" Type="Edm.String" MaxLength="127" />
+    <Property Name="AboutMe" Type="Edm.String" MaxLength="Max" />
+    <Property Name="SIPAddress" Type="Edm.String" MaxLength="Max" />
+    <Property Name="IsSiteAdmin" Type="Edm.Boolean" />
+    <Property Name="Deleted" Type="Edm.Boolean" />
+    <Property Name="Hidden" Type="Edm.Boolean" />
+    <Property Name="Picture" Type="Edm.String" MaxLength="Max" />
+    <Property Name="Department" Type="Edm.String" MaxLength="Max" />
+    <Property Name="Title" Type="Edm.String" MaxLength="Max" />
+    <Property Name="FirstName" Type="Edm.String" MaxLength="Max" />
+    <Property Name="LastName" Type="Edm.String" MaxLength="Max" />
+    <Property Name="WorkPhone" Type="Edm.String" MaxLength="Max" />
+    <Property Name="UserName" Type="Edm.String" MaxLength="Max" />
+    <Property Name="WebSite" Type="Edm.String" MaxLength="Max" />
+    <Property Name="AskMeAbout" Type="Edm.String" MaxLength="Max" />
+    <Property Name="Office" Type="Edm.String" MaxLength="Max" />
+    <Property Name="PictureTimestamp" Type="Edm.String" MaxLength="Max" />
+    <Property Name="PicturePlaceholderState" Type="Edm.Int32" />
+    <Property Name="PictureExchangeSyncState" Type="Edm.Int32" />
+    <Property Name="Modified" Type="Edm.DateTime" />
+    <Property Name="Created" Type="Edm.DateTime" />
+    <Property Name="Owshiddenversion" Type="Edm.Int32" />
+    <Property Name="Version" Type="Edm.String" MaxLength="Max" />
+    <Property Name="Path" Type="Edm.String" MaxLength="Max" />
+    <Property Name="CreatedById" Type="Edm.Int32" />
+    <Property Name="ModifiedById" Type="Edm.Int32" />
+    <NavigationProperty Name="CreatedBy" Relationship="LightSwitchApplication.UserInformationListItem_CreatedBy" ToRole="CreatedBy" FromRole="UserInformationListItem" />
+    <NavigationProperty Name="ModifiedBy" Relationship="LightSwitchApplication.UserInformationListItem_ModifiedBy" ToRole="ModifiedBy" FromRole="UserInformationListItem" />
+  </EntityType>
+  <EntityType Name="Question">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Title" Type="Edm.String" MaxLength="Max" />
+    <Property Name="AnswerA" Type="Edm.String" MaxLength="255" />
+    <Property Name="AnswerB" Type="Edm.String" MaxLength="255" />
+    <Property Name="AnswerC" Type="Edm.String" MaxLength="255" />
+    <Property Name="AnswerD" Type="Edm.String" MaxLength="255" />
+    <Property Name="CorrectAnswer" Type="Edm.String" MaxLength="Max" />
+    <Property Name="EliminateAnswer1" Type="Edm.String" MaxLength="Max" />
+    <Property Name="EliminateAnswer2" Type="Edm.String" MaxLength="Max" />
+    <Property Name="IsAvailable" Type="Edm.Boolean" />
+    <Property Name="SelectedAnswer" Type="Edm.String" MaxLength="Max" />
+    <Property Name="AnswerStatus" Type="Edm.String" MaxLength="Max" />
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ContentType" Type="Edm.String" MaxLength="Max" />
+    <Property Name="ContentTypeID" Type="Edm.String" MaxLength="Max" />
+    <Property Name="Modified" Type="Edm.DateTime" />
+    <Property Name="Created" Type="Edm.DateTime" />
+    <Property Name="Owshiddenversion" Type="Edm.Int32" />
+    <Property Name="Version" Type="Edm.String" MaxLength="Max" />
+    <Property Name="Path" Type="Edm.String" MaxLength="Max" />
+    <Property Name="CategoryId" Type="Edm.Int32" />
+    <Property Name="TeamId" Type="Edm.Int32" />
+    <Property Name="CreatedById" Type="Edm.Int32" />
+    <Property Name="ModifiedById" Type="Edm.Int32" />
+    <NavigationProperty Name="Category" Relationship="LightSwitchApplication.QuestionItem_Category" ToRole="Category" FromRole="QuestionItem" />
+    <NavigationProperty Name="Team" Relationship="LightSwitchApplication.QuestionItem_Team" ToRole="Team" FromRole="QuestionItem" />
+    <NavigationProperty Name="CreatedBy" Relationship="LightSwitchApplication.QuestionItem_CreatedBy" ToRole="CreatedBy" FromRole="QuestionItem" />
+    <NavigationProperty Name="ModifiedBy" Relationship="LightSwitchApplication.QuestionItem_ModifiedBy" ToRole="ModifiedBy" FromRole="QuestionItem" />
+  </EntityType>
+  <Association Name="CategoryItem_CreatedBy">
+    <End Role="CreatedBy" Type="LightSwitchApplication.UserInformationList" Multiplicity="0..1" />
+    <End Role="CategoryItem" Type="LightSwitchApplication.Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CreatedBy">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CategoryItem">
+        <PropertyRef Name="CreatedById" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CategoryItem_ModifiedBy">
+    <End Role="ModifiedBy" Type="LightSwitchApplication.UserInformationList" Multiplicity="0..1" />
+    <End Role="CategoryItem" Type="LightSwitchApplication.Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModifiedBy">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CategoryItem">
+        <PropertyRef Name="ModifiedById" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TeamItem_CreatedBy">
+    <End Role="CreatedBy" Type="LightSwitchApplication.UserInformationList" Multiplicity="0..1" />
+    <End Role="TeamItem" Type="LightSwitchApplication.Team" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CreatedBy">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TeamItem">
+        <PropertyRef Name="CreatedById" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TeamItem_ModifiedBy">
+    <End Role="ModifiedBy" Type="LightSwitchApplication.UserInformationList" Multiplicity="0..1" />
+    <End Role="TeamItem" Type="LightSwitchApplication.Team" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModifiedBy">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TeamItem">
+        <PropertyRef Name="ModifiedById" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserInformationListItem_CreatedBy">
+    <End Role="CreatedBy" Type="LightSwitchApplication.UserInformationList" Multiplicity="0..1" />
+    <End Role="UserInformationListItem" Type="LightSwitchApplication.UserInformationList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CreatedBy">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserInformationListItem">
+        <PropertyRef Name="CreatedById" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserInformationListItem_ModifiedBy">
+    <End Role="ModifiedBy" Type="LightSwitchApplication.UserInformationList" Multiplicity="0..1" />
+    <End Role="UserInformationListItem" Type="LightSwitchApplication.UserInformationList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModifiedBy">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserInformationListItem">
+        <PropertyRef Name="ModifiedById" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="QuestionItem_Category">
+    <End Role="Category" Type="LightSwitchApplication.Category" Multiplicity="0..1" />
+    <End Role="QuestionItem" Type="LightSwitchApplication.Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="QuestionItem">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="QuestionItem_Team">
+    <End Role="Team" Type="LightSwitchApplication.Team" Multiplicity="0..1" />
+    <End Role="QuestionItem" Type="LightSwitchApplication.Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="QuestionItem">
+        <PropertyRef Name="TeamId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="QuestionItem_CreatedBy">
+    <End Role="CreatedBy" Type="LightSwitchApplication.UserInformationList" Multiplicity="0..1" />
+    <End Role="QuestionItem" Type="LightSwitchApplication.Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CreatedBy">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="QuestionItem">
+        <PropertyRef Name="CreatedById" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="QuestionItem_ModifiedBy">
+    <End Role="ModifiedBy" Type="LightSwitchApplication.UserInformationList" Multiplicity="0..1" />
+    <End Role="QuestionItem" Type="LightSwitchApplication.Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModifiedBy">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="QuestionItem">
+        <PropertyRef Name="ModifiedById" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Pulsar_DataSource" m:IsDefaultEntityContainer="true">
+    <EntitySet Name="Categories" EntityType="LightSwitchApplication.Category" />
+    <EntitySet Name="Teams" EntityType="LightSwitchApplication.Team" />
+    <EntitySet Name="UserInformationLists" EntityType="LightSwitchApplication.UserInformationList" />
+    <EntitySet Name="Questions" EntityType="LightSwitchApplication.Question" />
+    <AssociationSet Name="CategoryItem_CreatedBy" Association="LightSwitchApplication.CategoryItem_CreatedBy">
+      <End Role="CreatedBy" EntitySet="UserInformationLists" />
+      <End Role="CategoryItem" EntitySet="Categories" />
+    </AssociationSet>
+    <AssociationSet Name="CategoryItem_ModifiedBy" Association="LightSwitchApplication.CategoryItem_ModifiedBy">
+      <End Role="ModifiedBy" EntitySet="UserInformationLists" />
+      <End Role="CategoryItem" EntitySet="Categories" />
+    </AssociationSet>
+    <AssociationSet Name="TeamItem_CreatedBy" Association="LightSwitchApplication.TeamItem_CreatedBy">
+      <End Role="CreatedBy" EntitySet="UserInformationLists" />
+      <End Role="TeamItem" EntitySet="Teams" />
+    </AssociationSet>
+    <AssociationSet Name="TeamItem_ModifiedBy" Association="LightSwitchApplication.TeamItem_ModifiedBy">
+      <End Role="ModifiedBy" EntitySet="UserInformationLists" />
+      <End Role="TeamItem" EntitySet="Teams" />
+    </AssociationSet>
+    <AssociationSet Name="UserInformationListItem_CreatedBy" Association="LightSwitchApplication.UserInformationListItem_CreatedBy">
+      <End Role="CreatedBy" EntitySet="UserInformationLists" />
+      <End Role="UserInformationListItem" EntitySet="UserInformationLists" />
+    </AssociationSet>
+    <AssociationSet Name="UserInformationListItem_ModifiedBy" Association="LightSwitchApplication.UserInformationListItem_ModifiedBy">
+      <End Role="ModifiedBy" EntitySet="UserInformationLists" />
+      <End Role="UserInformationListItem" EntitySet="UserInformationLists" />
+    </AssociationSet>
+    <AssociationSet Name="QuestionItem_Category" Association="LightSwitchApplication.QuestionItem_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="QuestionItem" EntitySet="Questions" />
+    </AssociationSet>
+    <AssociationSet Name="QuestionItem_Team" Association="LightSwitchApplication.QuestionItem_Team">
+      <End Role="Team" EntitySet="Teams" />
+      <End Role="QuestionItem" EntitySet="Questions" />
+    </AssociationSet>
+    <AssociationSet Name="QuestionItem_CreatedBy" Association="LightSwitchApplication.QuestionItem_CreatedBy">
+      <End Role="CreatedBy" EntitySet="UserInformationLists" />
+      <End Role="QuestionItem" EntitySet="Questions" />
+    </AssociationSet>
+    <AssociationSet Name="QuestionItem_ModifiedBy" Association="LightSwitchApplication.QuestionItem_ModifiedBy">
+      <End Role="ModifiedBy" EntitySet="UserInformationLists" />
+      <End Role="QuestionItem" EntitySet="Questions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

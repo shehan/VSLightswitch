@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Pulsar_DataSourceStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="Pulsar_DataSourceStore">
+    <EntitySet Name="Category" EntityType="Pulsar_DataSourceStore.Category" store:Type="Tables" Schema="dbo" Table="CategoryItem" />
+    <EntitySet Name="Team" EntityType="Pulsar_DataSourceStore.Team" store:Type="Tables" Schema="dbo" Table="TeamItem" />
+    <EntitySet Name="UserInformationList" EntityType="Pulsar_DataSourceStore.UserInformationList" store:Type="Tables" Schema="dbo" Table="UserInformationListItem" />
+    <EntitySet Name="Question" EntityType="Pulsar_DataSourceStore.Question" store:Type="Tables" Schema="dbo" Table="QuestionItem" />
+    <AssociationSet Name="CategoryItem_CreatedBy" Association="Pulsar_DataSourceStore.CategoryItem_CreatedBy">
+      <End Role="CreatedBy" EntitySet="UserInformationList" />
+      <End Role="CategoryItem" EntitySet="Category" />
+    </AssociationSet>
+    <AssociationSet Name="CategoryItem_ModifiedBy" Association="Pulsar_DataSourceStore.CategoryItem_ModifiedBy">
+      <End Role="ModifiedBy" EntitySet="UserInformationList" />
+      <End Role="CategoryItem" EntitySet="Category" />
+    </AssociationSet>
+    <AssociationSet Name="TeamItem_CreatedBy" Association="Pulsar_DataSourceStore.TeamItem_CreatedBy">
+      <End Role="CreatedBy" EntitySet="UserInformationList" />
+      <End Role="TeamItem" EntitySet="Team" />
+    </AssociationSet>
+    <AssociationSet Name="TeamItem_ModifiedBy" Association="Pulsar_DataSourceStore.TeamItem_ModifiedBy">
+      <End Role="ModifiedBy" EntitySet="UserInformationList" />
+      <End Role="TeamItem" EntitySet="Team" />
+    </AssociationSet>
+    <AssociationSet Name="UserInformationListItem_CreatedBy" Association="Pulsar_DataSourceStore.UserInformationListItem_CreatedBy">
+      <End Role="CreatedBy" EntitySet="UserInformationList" />
+      <End Role="UserInformationListItem" EntitySet="UserInformationList" />
+    </AssociationSet>
+    <AssociationSet Name="UserInformationListItem_ModifiedBy" Association="Pulsar_DataSourceStore.UserInformationListItem_ModifiedBy">
+      <End Role="ModifiedBy" EntitySet="UserInformationList" />
+      <End Role="UserInformationListItem" EntitySet="UserInformationList" />
+    </AssociationSet>
+    <AssociationSet Name="QuestionItem_Category" Association="Pulsar_DataSourceStore.QuestionItem_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="QuestionItem" EntitySet="Question" />
+    </AssociationSet>
+    <AssociationSet Name="QuestionItem_Team" Association="Pulsar_DataSourceStore.QuestionItem_Team">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="QuestionItem" EntitySet="Question" />
+    </AssociationSet>
+    <AssociationSet Name="QuestionItem_CreatedBy" Association="Pulsar_DataSourceStore.QuestionItem_CreatedBy">
+      <End Role="CreatedBy" EntitySet="UserInformationList" />
+      <End Role="QuestionItem" EntitySet="Question" />
+    </AssociationSet>
+    <AssociationSet Name="QuestionItem_ModifiedBy" Association="Pulsar_DataSourceStore.QuestionItem_ModifiedBy">
+      <End Role="ModifiedBy" EntitySet="UserInformationList" />
+      <End Role="QuestionItem" EntitySet="Question" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="ContentType" Type="nvarchar(max)" />
+    <Property Name="Title" Type="nvarchar(max)" />
+    <Property Name="ContentTypeID" Type="nvarchar(max)" />
+    <Property Name="Modified" Type="datetime" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Owshiddenversion" Type="int" />
+    <Property Name="Version" Type="nvarchar(max)" />
+    <Property Name="Path" Type="nvarchar(max)" />
+    <Property Name="CreatedById" Type="int" />
+    <Property Name="ModifiedById" Type="int" />
+  </EntityType>
+  <EntityType Name="Team">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="ContentType" Type="nvarchar(max)" />
+    <Property Name="Title" Type="nvarchar(max)" />
+    <Property Name="ContentTypeID" Type="nvarchar(max)" />
+    <Property Name="Modified" Type="datetime" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Owshiddenversion" Type="int" />
+    <Property Name="Version" Type="nvarchar(max)" />
+    <Property Name="Path" Type="nvarchar(max)" />
+    <Property Name="CreatedById" Type="int" />
+    <Property Name="ModifiedById" Type="int" />
+  </EntityType>
+  <EntityType Name="UserInformationList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="ContentType" Type="nvarchar(max)" />
+    <Property Name="ContentTypeID" Type="nvarchar(max)" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Account" Type="nvarchar(max)" />
+    <Property Name="WorkEmail" Type="nvarchar(max)" />
+    <Property Name="MobilePhone" Type="nvarchar" MaxLength="127" />
+    <Property Name="AboutMe" Type="nvarchar(max)" />
+    <Property Name="SIPAddress" Type="nvarchar(max)" />
+    <Property Name="IsSiteAdmin" Type="bit" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="Hidden" Type="bit" />
+    <Property Name="Picture" Type="nvarchar(max)" />
+    <Property Name="Department" Type="nvarchar(max)" />
+    <Property Name="Title" Type="nvarchar(max)" />
+    <Property Name="FirstName" Type="nvarchar(max)" />
+    <Property Name="LastName" Type="nvarchar(max)" />
+    <Property Name="WorkPhone" Type="nvarchar(max)" />
+    <Property Name="UserName" Type="nvarchar(max)" />
+    <Property Name="WebSite" Type="nvarchar(max)" />
+    <Property Name="AskMeAbout" Type="nvarchar(max)" />
+    <Property Name="Office" Type="nvarchar(max)" />
+    <Property Name="PictureTimestamp" Type="nvarchar(max)" />
+    <Property Name="PicturePlaceholderState" Type="int" />
+    <Property Name="PictureExchangeSyncState" Type="int" />
+    <Property Name="Modified" Type="datetime" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Owshiddenversion" Type="int" />
+    <Property Name="Version" Type="nvarchar(max)" />
+    <Property Name="Path" Type="nvarchar(max)" />
+    <Property Name="CreatedById" Type="int" />
+    <Property Name="ModifiedById" Type="int" />
+  </EntityType>
+  <EntityType Name="Question">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Title" Type="nvarchar(max)" />
+    <Property Name="AnswerA" Type="nvarchar" MaxLength="255" />
+    <Property Name="AnswerB" Type="nvarchar" MaxLength="255" />
+    <Property Name="AnswerC" Type="nvarchar" MaxLength="255" />
+    <Property Name="AnswerD" Type="nvarchar" MaxLength="255" />
+    <Property Name="CorrectAnswerValue" Type="nvarchar(max)" />
+    <Property Name="EliminateAnswer1Value" Type="nvarchar(max)" />
+    <Property Name="EliminateAnswer2Value" Type="nvarchar(max)" />
+    <Property Name="IsAvailable" Type="bit" />
+    <Property Name="SelectedAnswerValue" Type="nvarchar(max)" />
+    <Property Name="AnswerStatusValue" Type="nvarchar(max)" />
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="ContentType" Type="nvarchar(max)" />
+    <Property Name="ContentTypeID" Type="nvarchar(max)" />
+    <Property Name="Modified" Type="datetime" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Owshiddenversion" Type="int" />
+    <Property Name="Version" Type="nvarchar(max)" />
+    <Property Name="Path" Type="nvarchar(max)" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="TeamId" Type="int" />
+    <Property Name="CreatedById" Type="int" />
+    <Property Name="ModifiedById" Type="int" />
+  </EntityType>
+  <Association Name="CategoryItem_CreatedBy">
+    <End Role="CreatedBy" Type="Pulsar_DataSourceStore.UserInformationList" Multiplicity="0..1" />
+    <End Role="CategoryItem" Type="Pulsar_DataSourceStore.Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CreatedBy">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CategoryItem">
+        <PropertyRef Name="CreatedById" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CategoryItem_ModifiedBy">
+    <End Role="ModifiedBy" Type="Pulsar_DataSourceStore.UserInformationList" Multiplicity="0..1" />
+    <End Role="CategoryItem" Type="Pulsar_DataSourceStore.Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModifiedBy">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CategoryItem">
+        <PropertyRef Name="ModifiedById" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TeamItem_CreatedBy">
+    <End Role="CreatedBy" Type="Pulsar_DataSourceStore.UserInformationList" Multiplicity="0..1" />
+    <End Role="TeamItem" Type="Pulsar_DataSourceStore.Team" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CreatedBy">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TeamItem">
+        <PropertyRef Name="CreatedById" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TeamItem_ModifiedBy">
+    <End Role="ModifiedBy" Type="Pulsar_DataSourceStore.UserInformationList" Multiplicity="0..1" />
+    <End Role="TeamItem" Type="Pulsar_DataSourceStore.Team" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModifiedBy">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TeamItem">
+        <PropertyRef Name="ModifiedById" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserInformationListItem_CreatedBy">
+    <End Role="CreatedBy" Type="Pulsar_DataSourceStore.UserInformationList" Multiplicity="0..1" />
+    <End Role="UserInformationListItem" Type="Pulsar_DataSourceStore.UserInformationList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CreatedBy">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserInformationListItem">
+        <PropertyRef Name="CreatedById" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserInformationListItem_ModifiedBy">
+    <End Role="ModifiedBy" Type="Pulsar_DataSourceStore.UserInformationList" Multiplicity="0..1" />
+    <End Role="UserInformationListItem" Type="Pulsar_DataSourceStore.UserInformationList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModifiedBy">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserInformationListItem">
+        <PropertyRef Name="ModifiedById" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="QuestionItem_Category">
+    <End Role="Category" Type="Pulsar_DataSourceStore.Category" Multiplicity="0..1" />
+    <End Role="QuestionItem" Type="Pulsar_DataSourceStore.Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="QuestionItem">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="QuestionItem_Team">
+    <End Role="Team" Type="Pulsar_DataSourceStore.Team" Multiplicity="0..1" />
+    <End Role="QuestionItem" Type="Pulsar_DataSourceStore.Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="QuestionItem">
+        <PropertyRef Name="TeamId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="QuestionItem_CreatedBy">
+    <End Role="CreatedBy" Type="Pulsar_DataSourceStore.UserInformationList" Multiplicity="0..1" />
+    <End Role="QuestionItem" Type="Pulsar_DataSourceStore.Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CreatedBy">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="QuestionItem">
+        <PropertyRef Name="CreatedById" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="QuestionItem_ModifiedBy">
+    <End Role="ModifiedBy" Type="Pulsar_DataSourceStore.UserInformationList" Multiplicity="0..1" />
+    <End Role="QuestionItem" Type="Pulsar_DataSourceStore.Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModifiedBy">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="QuestionItem">
+        <PropertyRef Name="ModifiedById" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

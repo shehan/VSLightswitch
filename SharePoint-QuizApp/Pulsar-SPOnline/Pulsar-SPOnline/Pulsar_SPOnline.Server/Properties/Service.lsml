@@ -1,0 +1,2100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModelFragment xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication
+    Name="LightSwitchServiceApplication"
+    Version="1.0.0.0">
+    <ServiceApplication.Attributes>
+      <ModuleNamespace
+        Namespace="LightSwitchApplication" />
+    </ServiceApplication.Attributes>
+  </ServiceApplication>
+  <EntityContainerGroup
+    Name="DataWorkspace">
+    <EntityContainerGroupProperty
+      Name="SecurityData"
+      EntityContainer="Microsoft.LightSwitch.Security:SecurityData">
+      <EntityContainerGroupProperty.Attributes>
+        <Generated />
+        <DisplayName
+          Value="Security Data" />
+        <Description
+          Value="Service that provides access to security-related data." />
+      </EntityContainerGroupProperty.Attributes>
+    </EntityContainerGroupProperty>
+    <EntityContainerGroupProperty
+      Name="Pulsar_DataSource"
+      EntityContainer="Pulsar_DataSource" />
+  </EntityContainerGroup>
+  <GlobalAttributeGroup
+    Name="LightSwitchServiceApplicationGroup">
+    <GlobalAttributeGroup.Attributes>
+      <SharePointEnabled />
+      <AutomaticDisplayName
+        Expression="(\p{Ll})(\p{Lu})|_+"
+        Replacement="$1 $2" />
+    </GlobalAttributeGroup.Attributes>
+  </GlobalAttributeGroup>
+  <EntityType
+    Name="Category">
+    <EntityType.Attributes>
+      <DisplayName
+        Value="Category" />
+      <Description
+        Value="" />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="ID" />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="ContentType"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Content Type" />
+          <NotSortable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Title"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Title" />
+          <Required />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ContentTypeID"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Content Type ID" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Modified"
+        IsReadOnly="True"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Modified" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Created"
+        IsReadOnly="True"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Created" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Owshiddenversion"
+        IsReadOnly="True"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="owshiddenversion" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Version"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Version" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Path"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Path" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="CreatedBy"
+        Association="CategoryItem_CreatedBy"
+        FromEnd="CategoryItem"
+        ToEnd="CreatedBy" />
+      <NavigationProperty
+        Name="ModifiedBy"
+        Association="CategoryItem_ModifiedBy"
+        FromEnd="CategoryItem"
+        ToEnd="ModifiedBy" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="Team">
+    <EntityType.Attributes>
+      <DisplayName
+        Value="Team" />
+      <Description
+        Value="" />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="ID" />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="ContentType"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Content Type" />
+          <NotSortable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Title"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Title" />
+          <Required />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ContentTypeID"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Content Type ID" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Modified"
+        IsReadOnly="True"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Modified" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Created"
+        IsReadOnly="True"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Created" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Owshiddenversion"
+        IsReadOnly="True"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="owshiddenversion" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Version"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Version" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Path"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Path" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="CreatedBy"
+        Association="TeamItem_CreatedBy"
+        FromEnd="TeamItem"
+        ToEnd="CreatedBy" />
+      <NavigationProperty
+        Name="ModifiedBy"
+        Association="TeamItem_ModifiedBy"
+        FromEnd="TeamItem"
+        ToEnd="ModifiedBy" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="UserInformationList">
+    <EntityType.Attributes>
+      <DisplayName
+        Value="User Information List" />
+      <Description
+        Value="All people." />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="ID" />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="ContentType"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Content Type" />
+          <NotSortable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ContentTypeID"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Content Type ID" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Name"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Name" />
+          <Required />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Account"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Account" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="WorkEmail"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Work email" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="MobilePhone"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <MaxLength
+            Value="127" />
+          <DisplayName
+            Value="Mobile phone" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="AboutMe"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="About me" />
+          <NotSortable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="SIPAddress"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="SIP Address" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IsSiteAdmin"
+        IsReadOnly="True"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Is Site Admin" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Deleted"
+        IsReadOnly="True"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Deleted" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Hidden"
+        IsReadOnly="True"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Hidden" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Picture"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Picture" />
+          <NotSortable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Department"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Department" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Title"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Title" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FirstName"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="First name" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="LastName"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Last name" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="WorkPhone"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Work phone" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="UserName"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="User name" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="WebSite"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Web site" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="AskMeAbout"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Ask Me About" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Office"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Office" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PictureTimestamp"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Picture Timestamp" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PicturePlaceholderState"
+        IsReadOnly="True"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Picture Placeholder State" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PictureExchangeSyncState"
+        IsReadOnly="True"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Picture Exchange Sync State" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Modified"
+        IsReadOnly="True"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Modified" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Created"
+        IsReadOnly="True"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Created" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Owshiddenversion"
+        IsReadOnly="True"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="owshiddenversion" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Version"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Version" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Path"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Path" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="CreatedBy"
+        Association="UserInformationListItem_CreatedBy"
+        FromEnd="UserInformationListItem"
+        ToEnd="CreatedBy" />
+      <NavigationProperty
+        Name="ModifiedBy"
+        Association="UserInformationListItem_ModifiedBy"
+        FromEnd="UserInformationListItem"
+        ToEnd="ModifiedBy" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="CategoryItem_CreatedBy">
+    <AssociationEnd
+      Name="CategoryItem"
+      Multiplicity="Many"
+      EntityType="Category" />
+    <AssociationEnd
+      Name="CreatedBy"
+      EntityType="UserInformationList">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="CategoryItem_ModifiedBy">
+    <AssociationEnd
+      Name="CategoryItem"
+      Multiplicity="Many"
+      EntityType="Category" />
+    <AssociationEnd
+      Name="ModifiedBy"
+      EntityType="UserInformationList">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="TeamItem_CreatedBy">
+    <AssociationEnd
+      Name="TeamItem"
+      Multiplicity="Many"
+      EntityType="Team" />
+    <AssociationEnd
+      Name="CreatedBy"
+      EntityType="UserInformationList">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="TeamItem_ModifiedBy">
+    <AssociationEnd
+      Name="TeamItem"
+      Multiplicity="Many"
+      EntityType="Team" />
+    <AssociationEnd
+      Name="ModifiedBy"
+      EntityType="UserInformationList">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="UserInformationListItem_CreatedBy">
+    <AssociationEnd
+      Name="UserInformationListItem"
+      Multiplicity="Many"
+      EntityType="UserInformationList" />
+    <AssociationEnd
+      Name="CreatedBy"
+      EntityType="UserInformationList">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="UserInformationListItem_ModifiedBy">
+    <AssociationEnd
+      Name="UserInformationListItem"
+      Multiplicity="Many"
+      EntityType="UserInformationList" />
+    <AssociationEnd
+      Name="ModifiedBy"
+      EntityType="UserInformationList">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <EntityContainer
+    Name="Pulsar_DataSource">
+    <EntitySet
+      Name="Categories"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="Category" />
+    <EntitySet
+      Name="Teams"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="Team" />
+    <EntitySet
+      Name="UserInformationLists"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="UserInformationList" />
+    <AssociationSet
+      Name="CategoryItem_CreatedBy"
+      Association="CategoryItem_CreatedBy">
+      <AssociationSetEnd
+        Name="CategoryItem"
+        EntitySet="Categories" />
+      <AssociationSetEnd
+        Name="CreatedBy"
+        EntitySet="UserInformationLists" />
+    </AssociationSet>
+    <AssociationSet
+      Name="CategoryItem_ModifiedBy"
+      Association="CategoryItem_ModifiedBy">
+      <AssociationSetEnd
+        Name="CategoryItem"
+        EntitySet="Categories" />
+      <AssociationSetEnd
+        Name="ModifiedBy"
+        EntitySet="UserInformationLists" />
+    </AssociationSet>
+    <AssociationSet
+      Name="TeamItem_CreatedBy"
+      Association="TeamItem_CreatedBy">
+      <AssociationSetEnd
+        Name="TeamItem"
+        EntitySet="Teams" />
+      <AssociationSetEnd
+        Name="CreatedBy"
+        EntitySet="UserInformationLists" />
+    </AssociationSet>
+    <AssociationSet
+      Name="TeamItem_ModifiedBy"
+      Association="TeamItem_ModifiedBy">
+      <AssociationSetEnd
+        Name="TeamItem"
+        EntitySet="Teams" />
+      <AssociationSetEnd
+        Name="ModifiedBy"
+        EntitySet="UserInformationLists" />
+    </AssociationSet>
+    <AssociationSet
+      Name="UserInformationListItem_CreatedBy"
+      Association="UserInformationListItem_CreatedBy">
+      <AssociationSetEnd
+        Name="UserInformationListItem"
+        EntitySet="UserInformationLists" />
+      <AssociationSetEnd
+        Name="CreatedBy"
+        EntitySet="UserInformationLists" />
+    </AssociationSet>
+    <AssociationSet
+      Name="UserInformationListItem_ModifiedBy"
+      Association="UserInformationListItem_ModifiedBy">
+      <AssociationSetEnd
+        Name="UserInformationListItem"
+        EntitySet="UserInformationLists" />
+      <AssociationSetEnd
+        Name="ModifiedBy"
+        EntitySet="UserInformationLists" />
+    </AssociationSet>
+    <SubmitOperation
+      Name="SaveChanges" />
+    <QueryOperation
+      Name="Categories_Single"
+      ReturnType="Category">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Categories" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <DisplayName
+            Value="ID" />
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Categories_SingleOrDefault"
+      ReturnType="Category">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Categories" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <DisplayName
+            Value="ID" />
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Teams_Single"
+      ReturnType="Team">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Teams" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <DisplayName
+            Value="ID" />
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Teams_SingleOrDefault"
+      ReturnType="Team">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Teams" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <DisplayName
+            Value="ID" />
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="UserInformationLists_Single"
+      ReturnType="UserInformationList">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="UserInformationLists" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <DisplayName
+            Value="ID" />
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="UserInformationLists_SingleOrDefault"
+      ReturnType="UserInformationList">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="UserInformationLists" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <DisplayName
+            Value="ID" />
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <EntitySet
+      Name="Questions"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="Question" />
+    <AssociationSet
+      Name="QuestionItem_Category"
+      Association="QuestionItem_Category">
+      <AssociationSetEnd
+        Name="QuestionItem"
+        EntitySet="Questions" />
+      <AssociationSetEnd
+        Name="Category"
+        EntitySet="Categories" />
+    </AssociationSet>
+    <AssociationSet
+      Name="QuestionItem_Team"
+      Association="QuestionItem_Team">
+      <AssociationSetEnd
+        Name="QuestionItem"
+        EntitySet="Questions" />
+      <AssociationSetEnd
+        Name="Team"
+        EntitySet="Teams" />
+    </AssociationSet>
+    <AssociationSet
+      Name="QuestionItem_CreatedBy"
+      Association="QuestionItem_CreatedBy">
+      <AssociationSetEnd
+        Name="QuestionItem"
+        EntitySet="Questions" />
+      <AssociationSetEnd
+        Name="CreatedBy"
+        EntitySet="UserInformationLists" />
+    </AssociationSet>
+    <AssociationSet
+      Name="QuestionItem_ModifiedBy"
+      Association="QuestionItem_ModifiedBy">
+      <AssociationSetEnd
+        Name="QuestionItem"
+        EntitySet="Questions" />
+      <AssociationSetEnd
+        Name="ModifiedBy"
+        EntitySet="UserInformationLists" />
+    </AssociationSet>
+    <QueryOperation
+      Name="Questions_Single"
+      ReturnType="Question">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Questions" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <DisplayName
+            Value="ID" />
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Questions_SingleOrDefault"
+      ReturnType="Question">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Questions" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <DisplayName
+            Value="ID" />
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Query_GetQuestion"
+      ReturnType="Question">
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="And">
+            <BinaryExpression.Left>
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="Category" />
+                    <MemberExpression
+                      Member="Title" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="SelectedCategory_Parameter" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="IsAvailable" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ConstantExpression
+                    Value="True"
+                    ResultType=":Boolean?" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Questions" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="SelectedCategory_Parameter"
+        ParameterType=":String?" />
+    </QueryOperation>
+  </EntityContainer>
+  <EntityType
+    Name="Question">
+    <EntityType.Attributes>
+      <DisplayName
+        Value="Question" />
+      <Description
+        Value="" />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <EntityProperty
+        Name="Title"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Title" />
+          <Required />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="AnswerA"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+          <DisplayName
+            Value="AnswerA" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="AnswerB"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+          <DisplayName
+            Value="AnswerB" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="AnswerC"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+          <DisplayName
+            Value="AnswerC" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="AnswerD"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+          <DisplayName
+            Value="AnswerD" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CorrectAnswer"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <SupportedValue
+            DisplayName="A"
+            Value="A" />
+          <SupportedValue
+            DisplayName="B"
+            Value="B" />
+          <SupportedValue
+            DisplayName="C"
+            Value="C" />
+          <SupportedValue
+            DisplayName="D"
+            Value="D" />
+          <DisplayName
+            Value="CorrectAnswer" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="EliminateAnswer1"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <SupportedValue
+            DisplayName="A"
+            Value="A" />
+          <SupportedValue
+            DisplayName="B"
+            Value="B" />
+          <SupportedValue
+            DisplayName="C"
+            Value="C" />
+          <SupportedValue
+            DisplayName="D"
+            Value="D" />
+          <DisplayName
+            Value="EliminateAnswer1" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="EliminateAnswer2"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <SupportedValue
+            DisplayName="A"
+            Value="A" />
+          <SupportedValue
+            DisplayName="B"
+            Value="B" />
+          <SupportedValue
+            DisplayName="C"
+            Value="C" />
+          <SupportedValue
+            DisplayName="D"
+            Value="D" />
+          <DisplayName
+            Value="EliminateAnswer2" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IsAvailable"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="IsAvailable" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="SelectedAnswer"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <SupportedValue
+            DisplayName="A"
+            Value="A" />
+          <SupportedValue
+            DisplayName="B"
+            Value="B" />
+          <SupportedValue
+            DisplayName="C"
+            Value="C" />
+          <SupportedValue
+            DisplayName="D"
+            Value="D" />
+          <DisplayName
+            Value="SelectedAnswer" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="AnswerStatus"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <SupportedValue
+            DisplayName="Correct"
+            Value="Correct" />
+          <SupportedValue
+            DisplayName="Wrong"
+            Value="Wrong" />
+          <SupportedValue
+            DisplayName="Timeout"
+            Value="Timeout" />
+          <DisplayName
+            Value="AnswerStatus" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="ID" />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="ContentType"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <DisplayName
+            Value="Content Type" />
+          <NotSortable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ContentTypeID"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Content Type ID" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Modified"
+        IsReadOnly="True"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Modified" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Created"
+        IsReadOnly="True"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Created" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Owshiddenversion"
+        IsReadOnly="True"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="owshiddenversion" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Version"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Version" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Path"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <DisplayName
+            Value="Path" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Category"
+        Association="QuestionItem_Category"
+        FromEnd="QuestionItem"
+        ToEnd="Category" />
+      <NavigationProperty
+        Name="Team"
+        Association="QuestionItem_Team"
+        FromEnd="QuestionItem"
+        ToEnd="Team" />
+      <NavigationProperty
+        Name="CreatedBy"
+        Association="QuestionItem_CreatedBy"
+        FromEnd="QuestionItem"
+        ToEnd="CreatedBy" />
+      <NavigationProperty
+        Name="ModifiedBy"
+        Association="QuestionItem_ModifiedBy"
+        FromEnd="QuestionItem"
+        ToEnd="ModifiedBy" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="QuestionItem_Category">
+    <AssociationEnd
+      Name="QuestionItem"
+      Multiplicity="Many"
+      EntityType="Question" />
+    <AssociationEnd
+      Name="Category"
+      EntityType="Category">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="QuestionItem_Team">
+    <AssociationEnd
+      Name="QuestionItem"
+      Multiplicity="Many"
+      EntityType="Question" />
+    <AssociationEnd
+      Name="Team"
+      EntityType="Team">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="QuestionItem_CreatedBy">
+    <AssociationEnd
+      Name="QuestionItem"
+      Multiplicity="Many"
+      EntityType="Question" />
+    <AssociationEnd
+      Name="CreatedBy"
+      EntityType="UserInformationList">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="QuestionItem_ModifiedBy">
+    <AssociationEnd
+      Name="QuestionItem"
+      Multiplicity="Many"
+      EntityType="Question" />
+    <AssociationEnd
+      Name="ModifiedBy"
+      EntityType="UserInformationList">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <DataService
+    Name="Pulsar_DataSourceDataService"
+    DataProvider="SharePointDataProvider"
+    EntityContainer="Pulsar_DataSource">
+    <DataService.Attributes>
+      <CsdlEntityContainer
+        Name="DevTestDataContext" />
+    </DataService.Attributes>
+    <DataService.ConnectionProperties>
+      <ConnectionProperty
+        Name="ConnectionStringGuid"
+        Value="2773f5a6-edfb-4ec3-bc25-f2a8cc91bb11" />
+      <ConnectionProperty
+        Name="ProjectMetadata"
+        Value="EdmxFile1" />
+    </DataService.ConnectionProperties>
+    <EntitySetMapping
+      EntitySet="Categories">
+      <EntitySetMapping.Attributes>
+        <CsdlEntitySet
+          EntityTypeName="CategoryItem"
+          Name="Category"
+          EntityType="Category" />
+        <CsdlProperty
+          Name="Id"
+          Property="Category/Properties[Id]" />
+        <CsdlProperty
+          Name="ContentTypeID"
+          Property="Category/Properties[ContentTypeID]" />
+        <CsdlProperty
+          Name="ContentType"
+          Property="Category/Properties[ContentType]" />
+        <CsdlProperty
+          Name="Title"
+          Property="Category/Properties[Title]" />
+        <CsdlProperty
+          Name="Modified"
+          Property="Category/Properties[Modified]" />
+        <CsdlProperty
+          Name="Created"
+          Property="Category/Properties[Created]" />
+        <CsdlProperty
+          Name="Owshiddenversion"
+          Property="Category/Properties[Owshiddenversion]" />
+        <CsdlProperty
+          Name="Version"
+          Property="Category/Properties[Version]" />
+        <CsdlProperty
+          Name="Path"
+          Property="Category/Properties[Path]" />
+        <CsdlProperty
+          Name="CreatedBy"
+          Property="Category/Properties[CreatedBy]" />
+        <CsdlForeignKeyProperty
+          Name="CreatedById"
+          Property="UserInformationList/Properties[Id]" />
+        <CsdlProperty
+          Name="ModifiedBy"
+          Property="Category/Properties[ModifiedBy]" />
+        <CsdlForeignKeyProperty
+          Name="ModifiedById"
+          Property="UserInformationList/Properties[Id]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="Questions">
+      <EntitySetMapping.Attributes>
+        <CsdlEntitySet
+          EntityTypeName="QuestionItem"
+          Name="Question"
+          EntityType="Question" />
+        <CsdlProperty
+          Name="Title"
+          Property="Question/Properties[Title]" />
+        <CsdlProperty
+          Name="AnswerA"
+          Property="Question/Properties[AnswerA]" />
+        <CsdlProperty
+          Name="AnswerB"
+          Property="Question/Properties[AnswerB]" />
+        <CsdlProperty
+          Name="AnswerC"
+          Property="Question/Properties[AnswerC]" />
+        <CsdlProperty
+          Name="AnswerD"
+          Property="Question/Properties[AnswerD]" />
+        <CsdlProperty
+          Name="CorrectAnswerValue"
+          Property="Question/Properties[CorrectAnswer]" />
+        <CsdlProperty
+          Name="EliminateAnswer1Value"
+          Property="Question/Properties[EliminateAnswer1]" />
+        <CsdlProperty
+          Name="EliminateAnswer2Value"
+          Property="Question/Properties[EliminateAnswer2]" />
+        <CsdlProperty
+          Name="IsAvailable"
+          Property="Question/Properties[IsAvailable]" />
+        <CsdlProperty
+          Name="SelectedAnswerValue"
+          Property="Question/Properties[SelectedAnswer]" />
+        <CsdlProperty
+          Name="AnswerStatusValue"
+          Property="Question/Properties[AnswerStatus]" />
+        <CsdlProperty
+          Name="ContentTypeID"
+          Property="Question/Properties[ContentTypeID]" />
+        <CsdlProperty
+          Name="Id"
+          Property="Question/Properties[Id]" />
+        <CsdlProperty
+          Name="ContentType"
+          Property="Question/Properties[ContentType]" />
+        <CsdlProperty
+          Name="Modified"
+          Property="Question/Properties[Modified]" />
+        <CsdlProperty
+          Name="Created"
+          Property="Question/Properties[Created]" />
+        <CsdlProperty
+          Name="Owshiddenversion"
+          Property="Question/Properties[Owshiddenversion]" />
+        <CsdlProperty
+          Name="Version"
+          Property="Question/Properties[Version]" />
+        <CsdlProperty
+          Name="Path"
+          Property="Question/Properties[Path]" />
+        <CsdlProperty
+          Name="Category"
+          Property="Question/Properties[Category]" />
+        <CsdlForeignKeyProperty
+          Name="CategoryId"
+          Property="Category/Properties[Id]" />
+        <CsdlProperty
+          Name="Team"
+          Property="Question/Properties[Team]" />
+        <CsdlForeignKeyProperty
+          Name="TeamId"
+          Property="Team/Properties[Id]" />
+        <CsdlProperty
+          Name="CreatedBy"
+          Property="Question/Properties[CreatedBy]" />
+        <CsdlForeignKeyProperty
+          Name="CreatedById"
+          Property="UserInformationList/Properties[Id]" />
+        <CsdlProperty
+          Name="ModifiedBy"
+          Property="Question/Properties[ModifiedBy]" />
+        <CsdlForeignKeyProperty
+          Name="ModifiedById"
+          Property="UserInformationList/Properties[Id]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="Teams">
+      <EntitySetMapping.Attributes>
+        <CsdlEntitySet
+          EntityTypeName="TeamItem"
+          Name="Team"
+          EntityType="Team" />
+        <CsdlProperty
+          Name="Id"
+          Property="Team/Properties[Id]" />
+        <CsdlProperty
+          Name="ContentTypeID"
+          Property="Team/Properties[ContentTypeID]" />
+        <CsdlProperty
+          Name="ContentType"
+          Property="Team/Properties[ContentType]" />
+        <CsdlProperty
+          Name="Title"
+          Property="Team/Properties[Title]" />
+        <CsdlProperty
+          Name="Modified"
+          Property="Team/Properties[Modified]" />
+        <CsdlProperty
+          Name="Created"
+          Property="Team/Properties[Created]" />
+        <CsdlProperty
+          Name="Owshiddenversion"
+          Property="Team/Properties[Owshiddenversion]" />
+        <CsdlProperty
+          Name="Version"
+          Property="Team/Properties[Version]" />
+        <CsdlProperty
+          Name="Path"
+          Property="Team/Properties[Path]" />
+        <CsdlProperty
+          Name="CreatedBy"
+          Property="Team/Properties[CreatedBy]" />
+        <CsdlForeignKeyProperty
+          Name="CreatedById"
+          Property="UserInformationList/Properties[Id]" />
+        <CsdlProperty
+          Name="ModifiedBy"
+          Property="Team/Properties[ModifiedBy]" />
+        <CsdlForeignKeyProperty
+          Name="ModifiedById"
+          Property="UserInformationList/Properties[Id]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="UserInformationLists">
+      <EntitySetMapping.Attributes>
+        <CsdlEntitySet
+          EntityTypeName="UserInformationListItem"
+          Name="UserInformationList"
+          EntityType="UserInformationList" />
+        <CsdlProperty
+          Name="ContentTypeID"
+          Property="UserInformationList/Properties[ContentTypeID]" />
+        <CsdlProperty
+          Name="Name"
+          Property="UserInformationList/Properties[Name]" />
+        <CsdlProperty
+          Name="Account"
+          Property="UserInformationList/Properties[Account]" />
+        <CsdlProperty
+          Name="WorkEmail"
+          Property="UserInformationList/Properties[WorkEmail]" />
+        <CsdlProperty
+          Name="MobilePhone"
+          Property="UserInformationList/Properties[MobilePhone]" />
+        <CsdlProperty
+          Name="AboutMe"
+          Property="UserInformationList/Properties[AboutMe]" />
+        <CsdlProperty
+          Name="SIPAddress"
+          Property="UserInformationList/Properties[SIPAddress]" />
+        <CsdlProperty
+          Name="IsSiteAdmin"
+          Property="UserInformationList/Properties[IsSiteAdmin]" />
+        <CsdlProperty
+          Name="Deleted"
+          Property="UserInformationList/Properties[Deleted]" />
+        <CsdlProperty
+          Name="Hidden"
+          Property="UserInformationList/Properties[Hidden]" />
+        <CsdlProperty
+          Name="Picture"
+          Property="UserInformationList/Properties[Picture]" />
+        <CsdlProperty
+          Name="Department"
+          Property="UserInformationList/Properties[Department]" />
+        <CsdlProperty
+          Name="Title"
+          Property="UserInformationList/Properties[Title]" />
+        <CsdlProperty
+          Name="FirstName"
+          Property="UserInformationList/Properties[FirstName]" />
+        <CsdlProperty
+          Name="LastName"
+          Property="UserInformationList/Properties[LastName]" />
+        <CsdlProperty
+          Name="WorkPhone"
+          Property="UserInformationList/Properties[WorkPhone]" />
+        <CsdlProperty
+          Name="UserName"
+          Property="UserInformationList/Properties[UserName]" />
+        <CsdlProperty
+          Name="WebSite"
+          Property="UserInformationList/Properties[WebSite]" />
+        <CsdlProperty
+          Name="AskMeAbout"
+          Property="UserInformationList/Properties[AskMeAbout]" />
+        <CsdlProperty
+          Name="Office"
+          Property="UserInformationList/Properties[Office]" />
+        <CsdlProperty
+          Name="PictureTimestamp"
+          Property="UserInformationList/Properties[PictureTimestamp]" />
+        <CsdlProperty
+          Name="PicturePlaceholderState"
+          Property="UserInformationList/Properties[PicturePlaceholderState]" />
+        <CsdlProperty
+          Name="PictureExchangeSyncState"
+          Property="UserInformationList/Properties[PictureExchangeSyncState]" />
+        <CsdlProperty
+          Name="Id"
+          Property="UserInformationList/Properties[Id]" />
+        <CsdlProperty
+          Name="ContentType"
+          Property="UserInformationList/Properties[ContentType]" />
+        <CsdlProperty
+          Name="Modified"
+          Property="UserInformationList/Properties[Modified]" />
+        <CsdlProperty
+          Name="Created"
+          Property="UserInformationList/Properties[Created]" />
+        <CsdlProperty
+          Name="Owshiddenversion"
+          Property="UserInformationList/Properties[Owshiddenversion]" />
+        <CsdlProperty
+          Name="Version"
+          Property="UserInformationList/Properties[Version]" />
+        <CsdlProperty
+          Name="Path"
+          Property="UserInformationList/Properties[Path]" />
+        <CsdlProperty
+          Name="CreatedBy"
+          Property="UserInformationList/Properties[CreatedBy]" />
+        <CsdlForeignKeyProperty
+          Name="CreatedById"
+          Property="UserInformationList/Properties[Id]" />
+        <CsdlProperty
+          Name="ModifiedBy"
+          Property="UserInformationList/Properties[ModifiedBy]" />
+        <CsdlForeignKeyProperty
+          Name="ModifiedById"
+          Property="UserInformationList/Properties[Id]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="CategoryItem_CreatedBy">
+      <AssociationSetMapping.Attributes>
+        <CsdlAssociation
+          Name="CategoryItem_CreatedBy"
+          Association="CategoryItem_CreatedBy" />
+        <CsdlAssociationSetEnd
+          End="Pulsar_DataSource/Members[CategoryItem_CreatedBy]/Members[CreatedBy]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="Id" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+        <CsdlAssociationSetEnd
+          End="Pulsar_DataSource/Members[CategoryItem_CreatedBy]/Members[CategoryItem]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="CreatedById" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="CategoryItem_ModifiedBy">
+      <AssociationSetMapping.Attributes>
+        <CsdlAssociation
+          Name="CategoryItem_ModifiedBy"
+          Association="CategoryItem_ModifiedBy" />
+        <CsdlAssociationSetEnd
+          End="Pulsar_DataSource/Members[CategoryItem_ModifiedBy]/Members[ModifiedBy]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="Id" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+        <CsdlAssociationSetEnd
+          End="Pulsar_DataSource/Members[CategoryItem_ModifiedBy]/Members[CategoryItem]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="ModifiedById" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="QuestionItem_Category">
+      <AssociationSetMapping.Attributes>
+        <CsdlAssociation
+          Name="QuestionItem_Category"
+          Association="QuestionItem_Category" />
+        <CsdlAssociationSetEnd
+          End="Pulsar_DataSource/Members[QuestionItem_Category]/Members[Category]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="Id" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+        <CsdlAssociationSetEnd
+          End="Pulsar_DataSource/Members[QuestionItem_Category]/Members[QuestionItem]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="CategoryId" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="QuestionItem_Team">
+      <AssociationSetMapping.Attributes>
+        <CsdlAssociation
+          Name="QuestionItem_Team"
+          Association="QuestionItem_Team" />
+        <CsdlAssociationSetEnd
+          End="Pulsar_DataSource/Members[QuestionItem_Team]/Members[Team]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="Id" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+        <CsdlAssociationSetEnd
+          End="Pulsar_DataSource/Members[QuestionItem_Team]/Members[QuestionItem]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="TeamId" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="QuestionItem_CreatedBy">
+      <AssociationSetMapping.Attributes>
+        <CsdlAssociation
+          Name="QuestionItem_CreatedBy"
+          Association="QuestionItem_CreatedBy" />
+        <CsdlAssociationSetEnd
+          End="Pulsar_DataSource/Members[QuestionItem_CreatedBy]/Members[CreatedBy]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="Id" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+        <CsdlAssociationSetEnd
+          End="Pulsar_DataSource/Members[QuestionItem_CreatedBy]/Members[QuestionItem]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="CreatedById" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="QuestionItem_ModifiedBy">
+      <AssociationSetMapping.Attributes>
+        <CsdlAssociation
+          Name="QuestionItem_ModifiedBy"
+          Association="QuestionItem_ModifiedBy" />
+        <CsdlAssociationSetEnd
+          End="Pulsar_DataSource/Members[QuestionItem_ModifiedBy]/Members[ModifiedBy]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="Id" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+        <CsdlAssociationSetEnd
+          End="Pulsar_DataSource/Members[QuestionItem_ModifiedBy]/Members[QuestionItem]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="ModifiedById" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="TeamItem_CreatedBy">
+      <AssociationSetMapping.Attributes>
+        <CsdlAssociation
+          Name="TeamItem_CreatedBy"
+          Association="TeamItem_CreatedBy" />
+        <CsdlAssociationSetEnd
+          End="Pulsar_DataSource/Members[TeamItem_CreatedBy]/Members[CreatedBy]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="Id" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+        <CsdlAssociationSetEnd
+          End="Pulsar_DataSource/Members[TeamItem_CreatedBy]/Members[TeamItem]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="CreatedById" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="TeamItem_ModifiedBy">
+      <AssociationSetMapping.Attributes>
+        <CsdlAssociation
+          Name="TeamItem_ModifiedBy"
+          Association="TeamItem_ModifiedBy" />
+        <CsdlAssociationSetEnd
+          End="Pulsar_DataSource/Members[TeamItem_ModifiedBy]/Members[ModifiedBy]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="Id" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+        <CsdlAssociationSetEnd
+          End="Pulsar_DataSource/Members[TeamItem_ModifiedBy]/Members[TeamItem]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="ModifiedById" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="UserInformationListItem_CreatedBy">
+      <AssociationSetMapping.Attributes>
+        <CsdlAssociation
+          Name="UserInformationListItem_CreatedBy"
+          Association="UserInformationListItem_CreatedBy" />
+        <CsdlAssociationSetEnd
+          End="Pulsar_DataSource/Members[UserInformationListItem_CreatedBy]/Members[CreatedBy]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="Id" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+        <CsdlAssociationSetEnd
+          End="Pulsar_DataSource/Members[UserInformationListItem_CreatedBy]/Members[UserInformationListItem]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="CreatedById" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="UserInformationListItem_ModifiedBy">
+      <AssociationSetMapping.Attributes>
+        <CsdlAssociation
+          Name="UserInformationListItem_ModifiedBy"
+          Association="UserInformationListItem_ModifiedBy" />
+        <CsdlAssociationSetEnd
+          End="Pulsar_DataSource/Members[UserInformationListItem_ModifiedBy]/Members[ModifiedBy]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="Id" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+        <CsdlAssociationSetEnd
+          End="Pulsar_DataSource/Members[UserInformationListItem_ModifiedBy]/Members[UserInformationListItem]">
+          <CsdlAssociationSetEnd.Attributes>
+            <CsdlPropertyRef
+              Name="ModifiedById" />
+          </CsdlAssociationSetEnd.Attributes>
+        </CsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ModelFragment>
