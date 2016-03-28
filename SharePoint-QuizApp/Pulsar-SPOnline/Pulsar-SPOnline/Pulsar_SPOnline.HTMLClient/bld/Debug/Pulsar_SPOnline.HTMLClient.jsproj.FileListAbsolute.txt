@@ -1,0 +1,2 @@
+C:\Users\aperuma\Documents\GitHub\VSLightswitch\SharePoint-QuizApp\Pulsar-SPOnline\Pulsar-SPOnline\Pulsar_SPOnline.HTMLClient\bin\Debug\LSResourceGeneratorsTask.mcs
+C:\Users\aperuma\Documents\GitHub\VSLightswitch\SharePoint-QuizApp\Pulsar-SPOnline\Pulsar-SPOnline\Pulsar_SPOnline.HTMLClient\bin\Debug\LSClientCodeGeneratorsTask.mcs

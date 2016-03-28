@@ -57,6 +57,7 @@
     <Content Include="Content\msls-1.0.0.min.css" />
     <Content Include="Content\msls-dark.css" />
     <Content Include="Content\msls-light.css" />
+    <Content Include="Content\Sound\heartbeat.mp3" />
     <Content Include="default.htm" />
     <Content Include="Content\user-customization.css" />
     <Content Include="Content\Images\user-logo.png" />

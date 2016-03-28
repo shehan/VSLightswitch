@@ -584,6 +584,18 @@
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[AttachedLabelPosition]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="LeftAligned"
+                        ResultType=":String" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
             </ContentItem>
             <ContentItem
               Name="SelectedTeamId"
@@ -611,6 +623,18 @@
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[AttachedLabelPosition]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="LeftAligned"
+                        ResultType=":String" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
             </ContentItem>
             <ContentItem
               Name="Query_GetQuestion"
@@ -638,103 +662,125 @@
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="AnswerA"
-                Kind="Value"
-                DataType=":String?">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="Question/Properties[AnswerA]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                Name="Group"
+                Kind="Group"
+                View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
+                <ContentItem
+                  Name="AnswerA"
+                  Kind="Value"
+                  DataType=":String?">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Answer Choice A:" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
-                        <CallExpression
-                          Target="ViewQuestion/Methods[AnswerA_Tap]" />
+                        <MemberExpression
+                          Member="Question/Properties[AnswerA]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
-              <ContentItem
-                Name="AnswerB"
-                Kind="Value"
-                DataType=":String?">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="Question/Properties[AnswerB]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <CallExpression
+                            Target="ViewQuestion/Methods[AnswerA_Tap]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
+                  Name="AnswerB"
+                  Kind="Value"
+                  DataType=":String?">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Answer Choice B:" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
-                        <CallExpression
-                          Target="ViewQuestion/Methods[AnswerB_Tap]" />
+                        <MemberExpression
+                          Member="Question/Properties[AnswerB]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
-              <ContentItem
-                Name="AnswerC"
-                Kind="Value"
-                DataType=":String?">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="Question/Properties[AnswerC]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <CallExpression
+                            Target="ViewQuestion/Methods[AnswerB_Tap]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
+                  Name="AnswerC"
+                  Kind="Value"
+                  DataType=":String?">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Answer Choice C:" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
-                        <CallExpression
-                          Target="ViewQuestion/Methods[AnswerC_Tap]" />
+                        <MemberExpression
+                          Member="Question/Properties[AnswerC]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
-              <ContentItem
-                Name="AnswerD"
-                Kind="Value"
-                DataType=":String?">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="Question/Properties[AnswerD]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <CallExpression
+                            Target="ViewQuestion/Methods[AnswerC_Tap]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
+                  Name="AnswerD"
+                  Kind="Value"
+                  DataType=":String?">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Answer Choice D:" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
-                        <CallExpression
-                          Target="ViewQuestion/Methods[AnswerD_Tap]" />
+                        <MemberExpression
+                          Member="Question/Properties[AnswerD]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <CallExpression
+                            Target="ViewQuestion/Methods[AnswerD_Tap]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
               </ContentItem>
               <ContentItem
                 Name="CorrectAnswer"
+                IsHidden="True"
                 Kind="Value"
                 DataType=":String?">
                 <ContentItem.DataSource>
@@ -748,6 +794,7 @@
               </ContentItem>
               <ContentItem
                 Name="EliminateAnswer1"
+                IsHidden="True"
                 Kind="Value"
                 DataType=":String?">
                 <ContentItem.DataSource>
@@ -761,6 +808,7 @@
               </ContentItem>
               <ContentItem
                 Name="EliminateAnswer2"
+                IsHidden="True"
                 Kind="Value"
                 DataType=":String?">
                 <ContentItem.DataSource>
@@ -774,6 +822,7 @@
               </ContentItem>
               <ContentItem
                 Name="IsAvailable"
+                IsHidden="True"
                 Kind="Value"
                 DataType=":Boolean?">
                 <ContentItem.DataSource>
@@ -787,6 +836,7 @@
               </ContentItem>
               <ContentItem
                 Name="SelectedAnswer"
+                IsHidden="True"
                 Kind="Value"
                 DataType=":String?">
                 <ContentItem.DataSource>
@@ -800,6 +850,7 @@
               </ContentItem>
               <ContentItem
                 Name="AnswerStatus"
+                IsHidden="True"
                 Kind="Value"
                 DataType=":String?">
                 <ContentItem.DataSource>
@@ -813,6 +864,7 @@
               </ContentItem>
               <ContentItem
                 Name="ContentType"
+                IsHidden="True"
                 Kind="Value"
                 DataType=":String?">
                 <ContentItem.DataSource>
@@ -826,6 +878,7 @@
               </ContentItem>
               <ContentItem
                 Name="Category"
+                IsHidden="True"
                 Kind="Details"
                 DataType="Category">
                 <ContentItem.DataSource>
@@ -849,6 +902,7 @@
               </ContentItem>
               <ContentItem
                 Name="Team"
+                IsHidden="True"
                 Kind="Details"
                 DataType="Team">
                 <ContentItem.DataSource>
@@ -872,6 +926,7 @@
               </ContentItem>
               <ContentItem
                 Name="CreatedBy"
+                IsHidden="True"
                 Kind="Details"
                 DataType="UserInformationList">
                 <ContentItem.DataSource>
@@ -895,6 +950,7 @@
               </ContentItem>
               <ContentItem
                 Name="ModifiedBy"
+                IsHidden="True"
                 Kind="Details"
                 DataType="UserInformationList">
                 <ContentItem.DataSource>
@@ -916,6 +972,46 @@
                   </ContentItem.DataSource>
                 </ContentItem>
               </ContentItem>
+              <ContentItem
+                Name="ScreenContent"
+                Kind="ScreenContent">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Remaining Time:" />
+                </ContentItem.Attributes>
+              </ContentItem>
+              <ContentItem
+                Name="Sound_Background"
+                IsHidden="True"
+                Kind="ScreenContent">
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[AttachedLabelPosition]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="LeftAligned"
+                          ResultType=":String" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+            </ContentItem>
+            <ContentItem
+              Name="EliminateAnswers"
+              Kind="Command">
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <CallExpression
+                        Target="ViewQuestion/Methods[EliminateAnswers]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
             </ContentItem>
           </ContentItem>
           <ContentItem.PropertySources>
@@ -980,6 +1076,8 @@
         Name="AnswerC_Tap" />
       <ScreenMethod
         Name="AnswerD_Tap" />
+      <ScreenMethod
+        Name="EliminateAnswers" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenProperty

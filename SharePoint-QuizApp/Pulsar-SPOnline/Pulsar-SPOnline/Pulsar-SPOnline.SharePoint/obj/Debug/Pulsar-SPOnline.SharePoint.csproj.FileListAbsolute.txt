@@ -1,0 +1,3 @@
+C:\Users\aperuma\Documents\GitHub\VSLightswitch\SharePoint-QuizApp\Pulsar-SPOnline\Pulsar-SPOnline\Pulsar-SPOnline.SharePoint\bin\Debug\Pulsar-SPOnline.SharePoint.pdb
+C:\Users\aperuma\Documents\GitHub\VSLightswitch\SharePoint-QuizApp\Pulsar-SPOnline\Pulsar-SPOnline\Pulsar-SPOnline.SharePoint\obj\Debug\Pulsar-SPOnline.SharePoint.dll
+C:\Users\aperuma\Documents\GitHub\VSLightswitch\SharePoint-QuizApp\Pulsar-SPOnline\Pulsar-SPOnline\Pulsar-SPOnline.SharePoint\obj\Debug\Pulsar-SPOnline.SharePoint.pdb

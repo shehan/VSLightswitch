@@ -152,6 +152,16 @@
         /// </field>
         AnswerD_Tap_execute: [lightSwitchApplication.ViewQuestion],
         /// <field>
+        /// Called to determine if the EliminateAnswers method can be executed.
+        /// <br/>canExecute(msls.application.ViewQuestion screen)
+        /// </field>
+        EliminateAnswers_canExecute: [lightSwitchApplication.ViewQuestion],
+        /// <field>
+        /// Called to execute the EliminateAnswers method.
+        /// <br/>execute(msls.application.ViewQuestion screen)
+        /// </field>
+        EliminateAnswers_execute: [lightSwitchApplication.ViewQuestion],
+        /// <field>
         /// Called after the Details content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
@@ -181,6 +191,11 @@
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
         Title_postRender: $parameters,
+        /// <field>
+        /// Called after the Group content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        Group_postRender: $parameters,
         /// <field>
         /// Called after the AnswerA content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
@@ -255,7 +270,22 @@
         /// Called after the ModifiedBy content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
-        ModifiedBy_postRender: $parameters
+        ModifiedBy_postRender: $parameters,
+        /// <field>
+        /// Called to render the ScreenContent content item.
+        /// <br/>render(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        ScreenContent_render: $parameters,
+        /// <field>
+        /// Called to render the Sound_Background content item.
+        /// <br/>render(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        Sound_Background_render: $parameters,
+        /// <field>
+        /// Called after the EliminateAnswers content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        EliminateAnswers_postRender: $parameters
     });
 
 }(msls.application));
