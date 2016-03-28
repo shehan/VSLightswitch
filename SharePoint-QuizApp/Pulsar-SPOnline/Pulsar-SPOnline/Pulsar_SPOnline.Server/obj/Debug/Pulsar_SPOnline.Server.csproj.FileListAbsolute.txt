@@ -36,6 +36,5 @@ C:\Users\aperuma\Documents\GitHub\VSLightswitch\SharePoint-QuizApp\Pulsar-SPOnli
 C:\Users\aperuma\Documents\GitHub\VSLightswitch\SharePoint-QuizApp\Pulsar-SPOnline\Pulsar-SPOnline\Pulsar_SPOnline.Server\bin\Debug\System.ServiceModel.DomainServices.Hosting.xml
 C:\Users\aperuma\Documents\GitHub\VSLightswitch\SharePoint-QuizApp\Pulsar-SPOnline\Pulsar-SPOnline\Pulsar_SPOnline.Server\bin\Debug\System.ServiceModel.DomainServices.Hosting.OData.xml
 C:\Users\aperuma\Documents\GitHub\VSLightswitch\SharePoint-QuizApp\Pulsar-SPOnline\Pulsar-SPOnline\Pulsar_SPOnline.Server\bin\Debug\System.ServiceModel.DomainServices.Server.xml
-C:\Users\aperuma\Documents\GitHub\VSLightswitch\SharePoint-QuizApp\Pulsar-SPOnline\Pulsar-SPOnline\Pulsar_SPOnline.Server\obj\Debug\Pulsar_SPOnline.Server.csprojResolveAssemblyReference.cache
 C:\Users\aperuma\Documents\GitHub\VSLightswitch\SharePoint-QuizApp\Pulsar-SPOnline\Pulsar-SPOnline\Pulsar_SPOnline.Server\obj\Debug\Application.Server.dll
 C:\Users\aperuma\Documents\GitHub\VSLightswitch\SharePoint-QuizApp\Pulsar-SPOnline\Pulsar-SPOnline\Pulsar_SPOnline.Server\obj\Debug\Application.Server.pdb

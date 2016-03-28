@@ -24,17 +24,35 @@ function checkAnswer(selectedChoice, screen) {
     var correctAnswer = screen.details.properties.Query_GetQuestion.value.CorrectAnswer;
 
     if (selectedChoice == null) {
-        alert("Timeout!");
+        PlayMusic("Timeout", false);
+        alert("Oh no! You ran out of time!");
+        //msls.showMessageBox("Oh no! You ran out of time! :-(", {
+        //    title: "Pulsar",
+        //    buttons: msls.MessageBoxButtons.ok
+        //});
+
         screen.details.properties.Query_GetQuestion.value.AnswerStatus = "Timeout";
     }
     else if (selectedChoice === correctAnswer) {
         resetVariables();
-        alert("Correct Answer!");
+        PlayMusic("Correct", false);
+        alert("Yay! You answered correctly!");
+        //msls.showMessageBox("Yay! You answered correctly! :-)", {
+        //    title: "Pulsar",
+        //    buttons: msls.MessageBoxButtons.ok
+        //});
+
         screen.details.properties.Query_GetQuestion.value.AnswerStatus = "Correct";
     }
     else {
         resetVariables();
-        alert("Wrong Answer!");
+        PlayMusic("Wrong", false);
+        alert("Oh no! Your answer was incorrect!");
+        //msls.showMessageBox("Oh no! Your answer was incorrect! :-(", {
+        //    title: "Pulsar",
+        //    buttons: msls.MessageBoxButtons.ok
+        //});
+
         screen.details.properties.Query_GetQuestion.value.AnswerStatus = "Wrong";
     }
 
@@ -48,7 +66,7 @@ function checkAnswer(selectedChoice, screen) {
             screen.details.properties.Query_GetQuestion.value.setTeam(result.results[0]); //store the selected team in the questions list
 
             myapp.applyChanges().then(function (result) { //save the item (async call)
-                resetVariables();                
+                resetVariables();
                 myapp.navigateHome();
             });
         });
@@ -76,7 +94,7 @@ function countdown() {
             $('#countdownDiv').css('color', 'red');
         }
 
-        timeLeft--;        
+        timeLeft--;
     }
 
 }
@@ -113,10 +131,9 @@ function resetVariables() {
     currentScreen = null;
 }
 myapp.ViewQuestion.EliminateAnswers_execute = function (screen) {
- 
+
     var contentValue;
-    switch (screen.details.properties.Query_GetQuestion.value.EliminateAnswer1)
-    {
+    switch (screen.details.properties.Query_GetQuestion.value.EliminateAnswer1) {
         case 'A': contentValue = screen.findContentItem("AnswerA").value; break;
         case 'B': contentValue = screen.findContentItem("AnswerB").value; break;
         case 'C': contentValue = screen.findContentItem("AnswerC").value; break;
@@ -124,9 +141,8 @@ myapp.ViewQuestion.EliminateAnswers_execute = function (screen) {
     }
     $('span.id-element:contains(' + contentValue + ')').css('text-decoration', 'line-through');
     $('span.id-element:contains(' + contentValue + ')').css('background-color', 'red');
-    
-    switch (screen.details.properties.Query_GetQuestion.value.EliminateAnswer2)
-    {
+
+    switch (screen.details.properties.Query_GetQuestion.value.EliminateAnswer2) {
         case 'A': contentValue = screen.findContentItem("AnswerA").value; break;
         case 'B': contentValue = screen.findContentItem("AnswerB").value; break;
         case 'C': contentValue = screen.findContentItem("AnswerC").value; break;
@@ -136,15 +152,42 @@ myapp.ViewQuestion.EliminateAnswers_execute = function (screen) {
     $('span.id-element:contains(' + contentValue + ')').css('background-color', 'red');
 
     screen.findContentItem("EliminateAnswers").isEnabled = false;
-    
+
 };
 
 
 
- 
+
 
 
 myapp.ViewQuestion.Sound_Background_render = function (element, contentItem) {
-        var audioTag = "<audio autoplay='true' loop='' preload=''><source src='Content/Sound/heartbeat.mp3' type='audio/mp3'></source></audio>";
+    var audioTag = "<audio id='background_music' autoplay='true' preload=''><source></source></audio>";
     element.outerHTML = audioTag;
+
+    PlayMusic("Thinking", true);
 };
+
+function PlayMusic(musicType, loop) {
+    var musicFile;
+
+    switch (musicType) {
+        case 'Timeout':
+            musicFile = 'Content/Sound/out_of_time.mp3';
+            break;
+        case 'Correct':
+            musicFile = 'Content/Sound/correct_answer.mp3';
+            break;
+        case 'Wrong':
+            musicFile = 'Content/Sound/wrong_answer.mp3';
+            break;
+        case 'Thinking':
+            musicFile = 'Content/Sound/background_countdown.mp3';
+            break;
+    }
+    var audioPlayer = $("audio#background_music")[0];
+    audioPlayer.pause();
+    audioPlayer.loop = loop;
+    audioPlayer.src = musicFile;
+    audioPlayer.load();
+    audioPlayer.play();
+}

@@ -89,3 +89,7 @@ C:\Users\aperuma\Documents\GitHub\VSLightswitch\SharePoint-QuizApp\Pulsar-SPOnli
 C:\Users\aperuma\Documents\GitHub\VSLightswitch\SharePoint-QuizApp\Pulsar-SPOnline\Pulsar-SPOnline\Bin\Debug\HTMLClient\Content\Resources\Generated\model.json
 C:\Users\aperuma\Documents\GitHub\VSLightswitch\SharePoint-QuizApp\Pulsar-SPOnline\Pulsar-SPOnline\Bin\Debug\HTMLClient\Content\Resources\msls.lang-en-us.resjson
 C:\Users\aperuma\Documents\GitHub\VSLightswitch\SharePoint-QuizApp\Pulsar-SPOnline\Pulsar-SPOnline\Bin\Debug\HTMLClient\Content\Sound\heartbeat.mp3
+C:\Users\aperuma\Documents\GitHub\VSLightswitch\SharePoint-QuizApp\Pulsar-SPOnline\Pulsar-SPOnline\Bin\Debug\HTMLClient\Content\Sound\background_countdown.mp3
+C:\Users\aperuma\Documents\GitHub\VSLightswitch\SharePoint-QuizApp\Pulsar-SPOnline\Pulsar-SPOnline\Bin\Debug\HTMLClient\Content\Sound\correct_answer.mp3
+C:\Users\aperuma\Documents\GitHub\VSLightswitch\SharePoint-QuizApp\Pulsar-SPOnline\Pulsar-SPOnline\Bin\Debug\HTMLClient\Content\Sound\out_of_time.mp3
+C:\Users\aperuma\Documents\GitHub\VSLightswitch\SharePoint-QuizApp\Pulsar-SPOnline\Pulsar-SPOnline\Bin\Debug\HTMLClient\Content\Sound\wrong_answer.mp3
