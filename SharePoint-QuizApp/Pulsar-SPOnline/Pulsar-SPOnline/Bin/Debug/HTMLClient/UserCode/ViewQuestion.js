@@ -125,7 +125,6 @@ myapp.ViewQuestion.Details_postRender = function (element, contentItem) {
 };
 
 function resetVariables() {
-    //  $("audio#background_music").remove();
     clearTimeout(timerId);
     timerId = null;
     timeLeft = 30;
@@ -191,5 +190,4 @@ function PlayMusic(musicType, loop) {
     audioPlayer.src = musicFile;
     audioPlayer.load();
     audioPlayer.play();
-    //$("audio#background_music").append("<source src='"+musicFile+"' type='audio/mp3'></source>");
 }
